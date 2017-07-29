@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Arrays - sort and shuffle</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <p></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Arrays - sort and shuffle</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="number" class="form-control" id="length" placeholder="Length of the list">
+                    <span class="input-group-btn">
+        <button class="btn btn-default" id="create" onclick="createArray()" type="button">Submit</button>
+      </span>
+                </div>
+            </div>
+            <div class="col-md-6" type="text">
+                <div id="array" class="lead"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <button type="button" class="btn btn-default navbar-btn" id="sort" onclick="sortArray()">Sort</button>
+            </div>
+            <div class="col-md-6" type="text">
+                <div id="array-sorted" class="lead"> </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <button type="button" class="btn btn-default navbar-btn" id="shuffle" onclick="suffleArray()">Suffle</button>
+            </div>
+            <div class="col-md-6" type="text">
+                <div id="array-shuffled" class="lead"> </div>
+            </div>
+        </div>
+
+        <script src="arraysSortAndShuffle.js"></script>
+
+</body>
+
+</html>
