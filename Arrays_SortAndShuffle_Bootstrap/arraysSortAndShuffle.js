@@ -13,23 +13,23 @@ Array.prototype.shuffle = function() {
 
 Array.prototype.sort = function() {
     var input = this;
-    var result = [input[0]];
 
-    for (var i = 1; i < input.length; i++) {
-        if (input[i] < result[result.length - 1]) {
+    for (var index = 0; index < input.length; index++) {
 
-            for (var x = 0; x < result.length; x++) {
-                if (result[x] >= input[i]) {
+        for (var i = index + 1; i < input.length; i++) {
 
-                    result.splice(x, 0, input[i]);
-                    break;
+            var elementToCompare = input[i]
+
+            if (input[index] > elementToCompare) {
+                debugger;
+                for (var x = i; x >= index + 1; x--) {
+                    input[x] = input[x - 1];
                 }
+                input[index] = elementToCompare;
             }
-        } else {
-            result.push(input[i]);
         }
     }
-    return result;
+    return input;
 }
 
 function createArray() {
