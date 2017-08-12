@@ -28,14 +28,17 @@ function sort(array) {
     return array;
 }
 
-function indicateArithmeticMeanOfTheProcess(process, n, array) {
+function indicateArithmeticMeanOfTheProcess(process, n, lengthOfArray) {
     var results = [];
 
-    for (i = 0; i < n; i++) {
+    for (var i = 0; i < n; i++) {
+
+        var array = createRandomArray(lengthOfArray);
         var time = new Date().getTime();
         process(array);
         results.push(new Date().getTime() - time);
     }
+
     var sum = results.reduce((a, b) => a + b, 0);
     var avg = sum / results.length;
 }
