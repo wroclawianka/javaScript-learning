@@ -23,33 +23,33 @@
             <div class="col-md-3">
                 <div class="input-group">
                     <input type="number" class="form-control" id="length" placeholder="Length of the list">
-                    <span class="input-group-btn">
-        <button class="btn btn-default" id="create" onclick="createArray()" type="button">Submit</button>
-      </span>
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" id="create" onclick="createArray()" type="button">Submit</button>
+                    </div>
                 </div>
             </div>
+            <div class="col-md-9">
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default" id="sort" onclick="sortArray()">Sort</button>
+                    <button type="button" class="btn btn-default" id="shuffle" onclick="suffleArray()">Suffle</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-6" type="text">
                 <div id="array" class="lead"></div>
             </div>
         </div>
-
         <div class="row">
-            <div class="col-md-3">
-                <button type="button" class="btn btn-default navbar-btn" id="sort" onclick="sortArray()">Sort</button>
-            </div>
             <div class="col-md-6" type="text">
                 <div id="array-sorted" class="lead"> </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3">
-                <button type="button" class="btn btn-default navbar-btn" id="shuffle" onclick="suffleArray()">Suffle</button>
-            </div>
             <div class="col-md-6" type="text">
                 <div id="array-shuffled" class="lead"> </div>
             </div>
         </div>
-
         <script src="arraysSortAndShuffle.js"></script>
 
 </body>
