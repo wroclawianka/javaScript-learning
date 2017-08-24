@@ -11,13 +11,9 @@ function shuffle(array) {
 
 function sort(array) {
     for (var index = 0; index < array.length; index++) {
-
         for (var i = index + 1; i < array.length; i++) {
-
             var elementToCompare = array[i]
-
             if (array[index] > elementToCompare) {
-
                 for (var x = i; x >= index + 1; x--) {
                     array[x] = array[x - 1];
                 }
@@ -43,9 +39,9 @@ function indicateArithmeticMeanOfTheProcess(process, n, lengthOfArray) {
     var avg = sum / results.length;
 }
 
-function createRandomArray(amound) {
+function createRandomArray(amount) {
     var array = [];
-    for (i = 0; i < amound; i++) {
+    for (i = 0; i < amount; i++) {
         var temp = Math.floor(Math.random() * 100 + 1);
         array.push(temp);
     }
@@ -56,13 +52,10 @@ function createArray() {
     var userInput = document.getElementById("length").value;
 
     for (i = 0; i < userInput; i++) {
-
         array.push(Math.floor(Math.random() * (100)));
     }
 
     document.getElementById("array").innerHTML = array;
-
-    document.getElementById("create").disabled = true;
     document.getElementById("sort").disabled = false;
     document.getElementById("shuffle").disabled = false;
 }
@@ -75,6 +68,15 @@ function sortArray() {
 
 function suffleArray() {
     document.getElementById("array-shuffled").innerHTML = shuffle(array);
+}
+
+function submit() {
+    if (array.length > 0) {
+        array = [];
+        document.getElementById("array-sorted").innerHTML = "";
+        document.getElementById("array-shuffled").innerHTML = "";
+    }
+    createArray();
 }
 
 var array = [];
