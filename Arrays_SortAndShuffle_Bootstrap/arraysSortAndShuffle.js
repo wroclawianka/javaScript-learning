@@ -60,7 +60,7 @@ function createArray() {
         array.push(Math.floor(Math.random() * (100)));
     }
 
-    document.getElementById("array").innerHTML = "My list: " + array;
+    document.getElementById("array").innerHTML = array;
 
     document.getElementById("create").disabled = true;
     document.getElementById("sort").disabled = false;
@@ -69,12 +69,12 @@ function createArray() {
 
 function sortArray() {
 
-    document.getElementById("array-sorted").innerHTML = "My sorted list: " + sort(array);
+    document.getElementById("array-sorted").innerHTML = sort(array);
     document.getElementById("sort").disabled = true;
 }
 
 function suffleArray() {
-    document.getElementById("array-shuffled").innerHTML = "My shuffled list: " + shuffle(array);
+    document.getElementById("array-shuffled").innerHTML = shuffle(array);
 }
 
 var array = [];
