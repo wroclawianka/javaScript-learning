@@ -4,34 +4,34 @@ body {
 
 h2 {
     margin-bottom: 20px;
+    margin-left: 25px;
     color: #0C3A3A;
 }
 
 .main {
-    margin-top: 15px;
-    margin-bottom: 15px;
     background-color: #C1EBD4;
 }
 
-.inside {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#warning {
-    color: darkred;
+.input-group {
+    margin-left: 25px;
 }
 
 #selectLength {
     margin-bottom: 10px;
 }
 
+#warning {
+    height: 30px;
+    margin-left: 25px;
+    color: darkred;
+}
+
 .active {
-    margin-left: 0px;
+    margin-left: auto;
     color: black;
 }
 
 .inactive {
-    margin-left: 0px;
+    margin-left: auto;
     color: dimgrey;
 }
