@@ -113,17 +113,13 @@ function submit() {
     if (array.length > 0) {
         array = [];
 
-        setValue("array-sorted-value", " ");
-        setValue("array-shuffled-value", " ");
-        debugger;
+        setValue("array-sorted-value", "");
         setAsDisactive("array-sorted");
+
+        setValue("array-shuffled-value", "");
         setAsDisactive("array-shuffled");
     }
     createArray();
 }
 
-
 var array = [];
-
-setIfButtonDisabled("sort", true);
-setIfButtonDisabled("shuffle", true);
