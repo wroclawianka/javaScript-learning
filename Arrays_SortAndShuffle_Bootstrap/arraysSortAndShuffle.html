@@ -15,47 +15,45 @@
 
 <body>
     <p></p>
-    <div class="main container-fluid">
-        <div class="inside container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>Arrays - sort and shuffle</h2>
-                </div>
+    <div class="main container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Arrays - sort and shuffle</h2>
             </div>
-            <div class="row" id="selectLength">
-                <div class="col-md-3">
-                    <div class="input-group">
-                        <input type="number" min=1 max=1000 class="form-control" id="length" placeholder="Length of the list">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" id="create" onclick="submit()" type="button">Submit</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" id="sort" onclick="sortArray()">Sort</button>
-                        <button type="button" class="btn btn-default" id="shuffle" onclick="suffleArray()">Suffle</button>
+        </div>
+        <div class="row" id="selectLength">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="number" min=1 max=1000 class="form-control" id="length" placeholder="Length of the list">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" id="create" onclick="submit()" type="button">Submit</button>
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" id="sort" disabled=true onclick="sortArray()">Sort</button>
+                    <button type="button" class="btn btn-default" id="shuffle" disabled=true onclick="suffleArray()">Suffle</button>
+                </div>
+            </div>
+        </div>
+        <div class="container">
             <div class="row">
                 <div class="col-md-3" type="text">
                     <div id="warning"></div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row inactive" id="array">
-                    <div class="col-md-3 lead" type="text">Your list: </div>
-                    <div id="array-value" class="lead"></div>
-                </div>
-                <div class="row inactive" id="array-sorted">
-                    <div class="col-md-3 lead" type="text">Your sorted list: </div>
-                    <div id="array-sorted-value" class="lead"></div>
-                </div>
-                <div class="row inactive" id="array-shuffled">
-                    <div class="col-md-3 lead" type="text">Your shuffled list: </div>
-                    <div id="array-shuffled-value" class="lead"></div>
-                </div>
+            <div class="row list inactive" id="array">
+                <div class="col-md-3 lead" type="text">Your list: </div>
+                <div id="array-value" class="lead"></div>
+            </div>
+            <div class="row list inactive" id="array-sorted">
+                <div class="col-md-3 lead" type="text">Your sorted list: </div>
+                <div id="array-sorted-value" class="lead"></div>
+            </div>
+            <div class="row list inactive" id="array-shuffled">
+                <div class="col-md-3 lead" type="text">Your shuffled list: </div>
+                <div id="array-shuffled-value" class="lead"></div>
             </div>
         </div>
     </div>
