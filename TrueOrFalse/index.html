@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>True or False</title>
+    <!-- Results found on the book JavaScript and JQuery: Interactive Front-End Web Development -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+        .container {
+            margin-top: 5em;
+            text-align: center;
+        }
+
+        select, button{
+            margin: 1em 1em 0 0;
+        }
+
+        form {
+            padding: 3em;
+        }
+
+        .result {
+            font-size: 1.5em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>True or False</h1>
+        <form>
+            <div class="dropdowns">
+            <select name="list" id="aValue">
+                <option value="false">false</option>
+                <option value="0">0</option>
+                <option value="emptyString">''</option>
+                <option value="undefined">undefined</option>
+                <option value="null">null</option>
+                <option value="NaN">NaN</option>
+            </select>
+            <select name="list" id="bValue">
+                <option value="false">false</option>
+                <option value="0">0</option>
+                <option value="emptyString">''</option>
+                <option value="undefined">undefined</option>
+                <option value="null">null</option>
+                <option value="NaN">NaN</option>
+            </select>
+            </div>
+            <div class="buttons">
+                <button>Check Equality (==)</button></br>
+                <button>Check Indentity (===)</button>
+            </div>
+        </form>
+        
+    <div class="result">Result </br><span class="result-value"></span>
+    </div>
+    </div>
+
+        <script>        
+           function checkIndentity(a, b){
+                return a === b
+            }
+
+            function checkEquality(a, b){
+                return a == b
+            }
+
+
+            </script>
+    </body>
+
+    </html>
