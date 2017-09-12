@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Objects - My Exercises</title>
+    <!-- Excercises from the book: Marcin Lis, JavaScript, Cwiczenia Praktyczne, wydanie III.  -->
+</head>
+
+<body>
+
+    <p>Open the console for results.</p>
+
+<script>        
+
+    //6.9. access to arguments without specifiing it in the brackets
+    function sum(){
+        var suma = 0;
+        for(var i = 0; i < arguments.length; i++){
+            suma += arguments[i];
+        }
+        return suma;
+        }
+
+    console.log(sum(1,2,3));
+
+    //6.10 anonymous function
+    function operation(arg1, arg2, func){
+        var result = func(arg1, arg2);
+            return result * result; //2th power
+    }
+
+    var addTWoValues = operation(1, 2, function(val1, val2){
+        return val1 + val2;
+    });
+    
+    console.log(addTWoValues);
+
+</script>
+    </body>
+
+    </html>
