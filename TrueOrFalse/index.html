@@ -18,16 +18,24 @@
         }
 
         select, button{
-            margin: 1em 1em 0 0;
+            margin: 2em 1em 0 0;
         }
 
         form {
-            padding: 3em;
+            padding-top: 3em;
         }
 
         .result {
             font-size: 1.5em;
         }
+
+       .green{
+           color : green;
+        }
+ 
+        .red{
+           color : red;
+        } 
     </style>
 
 </head>
@@ -37,44 +45,69 @@
         <h1>True or False</h1>
         <form>
             <div class="dropdowns">
-            <select name="list" id="aValue">
-                <option value="false">false</option>
+            <select name="list" id="firstValue">
+                <option value="false" selected="selected">false</option>
                 <option value="0">0</option>
-                <option value="emptyString">''</option>
+                <option value="empty-string">'' (empty String)</option>
                 <option value="undefined">undefined</option>
                 <option value="null">null</option>
                 <option value="NaN">NaN</option>
             </select>
-            <select name="list" id="bValue">
+            <select name="list" id="secondValue">
                 <option value="false">false</option>
-                <option value="0">0</option>
-                <option value="emptyString">''</option>
+                <option value="0" selected="selected">0</option>
+                <option value="empty-string">'' (empty String)</option>
                 <option value="undefined">undefined</option>
                 <option value="null">null</option>
                 <option value="NaN">NaN</option>
             </select>
             </div>
-            <div class="buttons">
-                <button>Check Equality (==)</button></br>
-                <button>Check Indentity (===)</button>
-            </div>
-        </form>
-        
-    <div class="result">Result </br><span class="result-value"></span>
+            <div class="lead">
+                    <button type="button" class="btn btn-default" value="==">Check Equality (==)</button></br>
+                    <button type="button" class="btn btn-default" value="===">Check Indentity (===)</button>
+                </div>
+        </form>     
+    <div class="result">
+        </p>Result: </p>
+        <p id="result-value"></p>
     </div>
     </div>
+        <script>  
+        const buttons = document.querySelectorAll('button');    
+        const result = document.querySelector("#result-value");
 
-        <script>        
-           function checkIndentity(a, b){
-                return a === b
+        function Value(name, value){
+            this.name = name;
+            this.value = value;
+        }
+
+        const values = [new Value("false", false), new Value("0", 0), new Value("empty-string", ''), 
+        new Value("undefined", undefined), new Value("null", null), new Value("NaN", NaN)];
+
+        function showResults() {
+            let a = values.find(value => value.name == $('#firstValue option:selected').val());
+            let b = values.find(value => value.name == $('#secondValue option:selected').val());           
+            result.textContent = getResult(this.value, a, b);
+            changeColor();
+        }
+
+        function getResult(sign, a, b){
+            switch(sign){
+                case "==": 
+                    return a.value == b.value;
+                case "===":
+                   return a.value === b.value;
+                default:
+                    console.warn("Unspecified sign");
             }
+        }
 
-            function checkEquality(a, b){
-                return a == b
-            }
+        function changeColor(e){
+            let color = (result.textContent == "true")? "green" : "red";
+            result.setAttribute("class", color);
+        }
 
-
-            </script>
+        buttons.forEach(button => button.addEventListener("click", showResults));
+    </script>
     </body>
-
     </html>
