@@ -22,24 +22,48 @@
     // Interpolated
 
     // Styled
+    console.log('%c Great text ', 'font-size:50px; color:white; background:red; text-shadow: 5px 5px 0 blue');
 
     // warning!
+    console.warn('ON NOO');
 
     // Error :|
+    console.error('Error-error');
 
     // Info
+    console.info('info info info Lorem ipsum');
 
     // Testing
+    console.assert(1 !== 1, "One is one")
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    const p = document.querySelector('p');
+    console.log(p);
+    console.dir(p);
 
+    console.clear();
     // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);                  
+      console.groupEnd(`${dog.name}`);
+    });
 
     // counting
+    console.count(`Wes`);
 
     // timing
+    console.time('fetching data');
+    //some time consuming operations
+    console.timeEnd('fetching data');
+
+    //table
+    console.table(dogs);
 
   </script>
 </body>
