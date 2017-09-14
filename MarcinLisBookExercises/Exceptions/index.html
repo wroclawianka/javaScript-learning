@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Ecxeptions - My Exercises</title>
+    <!-- Excercises from the book: Marcin Lis, JavaScript, Cwiczenia Praktyczne, wydanie III.  -->
+</head>
+
+<body>
+
+    <p>Open the console for results.</p>
+
+    <script>
+        // 7.1 + finally 
+        let i = 1;
+
+        function divide(a, b) {
+            if (b == 0) {
+                throw new Error("Impossible to use 0 as divider");
+            }
+            return result = a / b;
+        }
+
+        function doSomeOperations(a, b) {
+            try {
+                divide(a, b);
+            } catch (e) {
+                console.log(e.message);
+            } finally {
+                console.log(i++ + " - I will be executed whatever happen");
+            }
+        }
+
+        doSomeOperations(2, 0);
+        doSomeOperations(2, 2);
+    </script>
+</body>
+
+</html>
