@@ -7,6 +7,17 @@
 </head>
 <body>
 <script>
+const pressed = [];
+const secredCode = "dorota";
+
+window.addEventListener('keyup', (e) => {
+  pressed.push(e.key);
+  pressed.splice(-(secredCode.length -1), pressed.length - secredCode.length);
+
+if(pressed.join('').includes(secredCode)) {
+  cornify_add();
+}
+})
 </script>
 </body>
 </html>
