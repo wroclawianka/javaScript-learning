@@ -5,37 +5,54 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Math - My Exercises</title>
     <!-- Excercises from the book: Marcin Lis, JavaScript, Cwiczenia Praktyczne, wydanie III.  -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <style>
+   .excercises {
+       margin-left: 8em;
+       margin-right: 8em;
+   }
+   </style>
 </head>
 
 <body>
-    
+    <div class="container">
+        <h1>Some Math exercises + adding elements to HTML</h1>
+        <div class="excercises">
+            <div class="task86 col-md-4">
+                <h2>8.6</h2>
+            </div>
+            <div class="task87 col-md-4">
+                <h2>8.7</h2>
+            </div>
+        </div>
+    </div>
+
     <script>
-        //8.6
-        document.write("8.6. :" + "<br />");
-        document.write("E = " + Math.E + "<br />");
-        document.write("LN2 = " + Math.LN2 + "<br />");
-        document.write("LN10 = " + Math.LN10 + "<br />");
-        document.write("LOG2E = " + Math.LOG2E + "<br />");
-        document.write("LOG10E = " + Math.LOG10E + "<br />");
-        document.write("PI = " + Math.PI + "<br />");
-        document.write("SQRT1_2 = " + Math.SQRT1_2 + "<br />");
-        document.write("SQRT2 = " + Math.SQRT2 + "<br />");
+        const excercises = document.querySelector(".excercises");
 
-        //8.7
-        document.write("<br />" + "8.7. :" + "<br />");
-        document.write("pow(2, 8) = " + Math.pow(2, 8));
-        document.write("<br />pow(9, -2) = " + Math.pow(9, -2));
-        document.write("<br />pow(2.4, 3.2) = " + Math.pow(2.4, 3.2));
-        document.write("<br />pow(-3, 2) = " + Math.pow(-3, 2));
-        document.write("<br />pow(-3, -2) = " + Math.pow(-3, -2));
-        document.write("<br />pow(-3.2, -2.4) = " + Math.pow(-3.2, -2.4));
-        document.write("<br />pow(256, 2199456) = " + Math.pow(256, 2199456));
-        document.write("<br />sqrt(2) = " + Math.sqrt(2));
-        document.write("<br />sqrt(-2) = " + Math.sqrt(-2));
-        document.write("<br />pow(sqrt(2), 2) = " + Math.pow(Math.sqrt(2), 2));
-        document.write("<br />pow(sqrt(4), 2) = " + Math.pow(Math.sqrt(4), 2));
+        var list86 = [["E", Math.E], ["LN2", Math.LN2], ["LN10", Math.LN10], ["LOG2E", Math.LOG2E],
+        ["LOG10E", Math.LOG10E], ["PI", Math.PI], ["SQRT1_2", Math.SQRT1_2], ["SQRT2", Math.SQRT2]];
 
-        //TODO: write this script with InnerHTML use
+        var list87 = [["pow(2, 8)", Math.pow(2, 8)], ["pow(9, -2)",Math.pow(9, -2)], ["pow(2.4, 3.2)", Math.pow(2.4, 3.2)],
+         ["pow(-3, 2)", Math.pow(-3, 2)], ["pow(-3.2, -2.4)", Math.pow(-3.2, -2.4)], ["pow(256, 2199456)", Math.pow(256, 2199456)],
+        ["sqrt(2)", Math.sqrt(2)], ["sqrt(-2)", Math.sqrt(-2)], ["pow(sqrt(2), 2)", Math.pow(Math.sqrt(2), 2)], ["pow(sqrt(4), 2)", Math.pow(Math.sqrt(4), 2)],];
+
+        list86.forEach(function(element) {
+            showOnThePage(element, 86);
+        });
+
+        list87.forEach(function(element) { 
+            showOnThePage(element, 87);
+        });
+
+        function showOnThePage(array, number){
+            var statement = document.createElement('p');
+            var statmentContent = document.createTextNode(array[0] + ": " + array[1]);
+            var section = excercises.querySelector(`.task${number}`)
+            statement.appendChild(statmentContent);
+            section.appendChild(statement);
+        }
     </script>
 </body>
 
