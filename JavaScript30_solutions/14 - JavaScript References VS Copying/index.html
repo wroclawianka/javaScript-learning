@@ -1,22 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>JS Reference VS Copy</title>
 </head>
+
 <body>
 
   <script>
     // start with strings, numbers and booleans
+    console.log("I - strings, numbers and booleans:");
+    let age = 20;
+    let age2 = age;
+    console.log(age, age2);
+    age = 10;
+    console.log(age, age2);
+
+    let name = 'Dorota';
+    let name2 = name;
+    console.log(name, name2);
+    name = 'doris';
+    console.log(name, name2);
+
+    let bool = true;
+    let bool2 = bool;
+    console.log(bool, bool2);
+
+    bool = false;
+    console.log(bool, bool2);
+
+    console.log("For strings numbers and booleans - we make reference, not a copy! Worth to remember!")
 
     // Let's say we have an array
-    const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+    const players = ['Anna', 'Monika', 'Basia', 'Aleksandra'];
+    const players2 = ['Anna', 'Monika', 'Basia', 'Aleksandra'];
 
     // and we want to make a copy of it.
+    const team = players2;
 
+    console.log("II - Arrays:")
+    console.log("1) REFERENCE " + "const team = players;" + " - we can overwrite players by modiifying team");
     // You might think we can just do something like this:
+    team[3] = 'Sylwia';
 
     // however what happens when we update that array?
+    console.log(players2, team);
 
     // now here is the problem!
 
@@ -27,26 +56,80 @@
     // So, how do we fix this? We take a copy instead!
 
     // one way
+    const team2 = players.slice();
+    console.log("2) const team2 = players.slice();");
+    console.log(players, team2);
 
     // or create a new array and concat the old one in
+    const team3 = [].concat(players);
+    team3[3] = 'Kamila';
+    console.log("3) const team3 = [].concat(players);");
+    console.log(players, team3);
 
     // or use the new ES6 Spread
+    const team4 = [...players];
+    team4[3] = 'Sylwia';
+    console.log("4) const team4 = [...players];");
+    console.log(players, team4);
 
+    const team5 = Array.from(players);
+    team5[3] = "Marta";
+    console.log("5) const team5 = Array.from(players);");
+    console.log(players, team5);
     // now when we update it, the original one isn't changed
 
     // The same thing goes for objects, let's say we have a person object
 
+    console.log("III = Objects:")
     // with Objects
+    const person = {
+      name: 'Wes Bos',
+      age: 80
+    };
 
     // and think we make a copy:
+    const captain = person;
+    //captain.number = 99; !
+    console.log("6) REFERENCE " + "const captain = person;" + "we can overwrite person by modiifying capitan")
+    console.log(person, captain);
 
     // how do we take a copy instead?
+    const cap2 = Object.assign({}, person, { number: 99, age: 12 });
+    console.log("7) const cap2 = Object.assign({}, person, { number: 99, age : 12 });" + " WARNING! this is going only one level deep, check social media example below");
+    console.log(person, cap2);
 
     // We will hopefully soon see the object ...spread
+    const cap3 = { ...person };
+    cap3["my-number"] = 3432;
+    console.log("8) const cap3 = { ...person }; ap3[\"my-number\"] = 3432;" + " WARNING! The same issue");
+    console.log(person, cap3);
 
     // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
 
+    const wes = {
+      name: 'Wes',
+      age: 100,
+      social: {
+        twitter: '@wesbos',
+        facebook: 'wesbos.developer'
+      }
+    };
+
+    const dev = Object.assign({}, wes);
+    const dev3 = { ...wes };
+
+    console.log(wes, dev, dev3);
+    //dev.social.facebook = "dfdfsfsdfs";
+    //dev.social.facebook = "aaaaaaaa";
+    console.log(wes, dev, dev3);
+
+    console.log("const dev2 = JSON.parse(JSON.stringify(wes));" + " - fiull reference, without any deepth issues");
+    console.log("JSON.stringify(wes) put your object to string, JSON.parse create an object from string again");
+    const dev2 = JSON.parse(JSON.stringify(wes));
+    dev2.social.facebook = "tararara";
+    console.log(wes, dev2);
   </script>
 
 </body>
+
 </html>
