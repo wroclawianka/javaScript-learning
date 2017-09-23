@@ -1,6 +1,7 @@
   const addItems = document.querySelector('.add-items');
   const itemsList = document.querySelector('.plates');
-  const items = JSON.parse(localStorage.getItem('items')) || [];
+  const buttons = addItems.querySelectorAll("button");
+  var items = JSON.parse(localStorage.getItem('items')) || [];
 
   function addItem(e) {
       e.preventDefault();
@@ -11,17 +12,17 @@
       };
 
       items.push(item);
-      populateList(items, itemsList);
       localStorage.setItem("items", JSON.stringify(items));
+      populateList(items, itemsList);
       this.reset();
   }
 
-  function populateList(plates = [], platesList) {
-      platesList.innerHTML = plates.map((plate, i) => {
+  function populateList(elements = [], elementsList) {
+      elementsList.innerHTML = elements.map((el, i) => {
           return `
       <li>
-        <input type="checkbox" data-index=${i} id="item${i}" ${plate.done ? 'checked' : ''} />
-        <label for="item${i}">${plate.text}</label>
+        <input type="checkbox" data-index=${i} id="item${i}" ${el.done ? 'checked' : ''} />
+        <label for="item${i}">${el.text}</label>
       </li>
       `
       }).join("");
@@ -36,6 +37,25 @@
       populateList(items, itemsList);
   }
 
+  function triggerAction(e) {
+      e.preventDefault();
+      switch (e.target.name) {
+          case "check-all":
+              items.forEach(item => item.done = true);
+              break;
+          case "uncheck-all":
+              items.forEach(item => item.done = false);
+              break;
+          case "clear-all":
+              debugger;
+              items = [];
+              break;
+      }
+      localStorage.setItem("items", JSON.stringify(items));
+      populateList(items, itemsList);
+  };
+
   addItems.addEventListener('submit', addItem);
+  buttons.forEach(button => button.addEventListener("click", triggerAction));
   itemsList.addEventListener('click', toggleDone);
   populateList(items, itemsList);
