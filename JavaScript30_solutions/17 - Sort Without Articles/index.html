@@ -58,7 +58,7 @@
             //     a.shift();
             // }
             // return a.join(" ");
-            return str.replace(/^(a |an |the)/i, "").trim();
+            return str.replace(/^(a |an |the )/i, "").trim();
         };
 
         const sortedBands = bands.sort((a, b) => (noArticles(a) < noArticles(b)) ? -1 : 1);
