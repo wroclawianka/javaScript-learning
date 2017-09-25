@@ -53,20 +53,22 @@
         ];
 
         function noArticles(str) {
-            var a = str.split(" ");
-            if (a[0] == "The" || a[0] == "An" || a[0] == "A") {
-                a.shift();
-            }
-            return a.join(" ");
+            // var a = str.split(" ");
+            // if (a[0] == "The" || a[0] == "An" || a[0] == "A") {
+            //     a.shift();
+            // }
+            // return a.join(" ");
+            return str.replace(/^(a |an |the)/i, "").trim();
         };
 
         const sortedBands = bands.sort((a, b) => (noArticles(a) < noArticles(b)) ? -1 : 1);
-        sortedBands.forEach(band => {
-            var node = document.createElement("LI");
-            var textNode = document.createTextNode(band);
-            node.appendChild(textNode);
-            bandsList.appendChild(node);
-        });
+        // sortedBands.forEach(band => {
+        //     var node = document.createElement("LI");
+        //     var textNode = document.createTextNode(band);
+        //     node.appendChild(textNode);
+        //     bandsList.appendChild(node);
+        // });
+        bandsList.innerHTML = sortedBands.map(band => `<li>${band}</li>`).join("");
     </script>
 
 </body>
