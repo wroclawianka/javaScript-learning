@@ -17,8 +17,12 @@
     <p></p>
     <div class="main container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <h2>Arrays - sort and shuffle</h2>
+            </div>
+            <div class="col-md-12 description">
+                <p>Select length of your list, the application will give you such list with random numbers.</p>
+                <p>You can sort and shuffle your list. And when you will be bored you can use a different one.</p>
             </div>
         </div>
         <div class="row" id="selectLength">
@@ -32,8 +36,8 @@
             </div>
             <div class="col-md-6">
                 <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default" id="sort" disabled=true onclick="sortArray()">Sort</button>
-                    <button type="button" class="btn btn-default" id="shuffle" disabled=true onclick="suffleArray()">Suffle</button>
+                    <button type="button" class="btn btn-default" id="sort" disabled=true>Sort</button>
+                    <button type="button" class="btn btn-default" id="shuffle" disabled=true>Suffle</button>
                 </div>
             </div>
         </div>
@@ -43,17 +47,17 @@
                     <div id="warning"></div>
                 </div>
             </div>
-            <div class="row list inactive" id="array">
+            <div class="row list" id="array">
                 <div class="col-md-3 lead" type="text">Your list: </div>
-                <div id="array-value" class="lead"></div>
+                <div id="array-value" class="lead value"></div>
             </div>
-            <div class="row list inactive" id="array-sorted">
+            <div class="row list" id="array-sorted">
                 <div class="col-md-3 lead" type="text">Your sorted list: </div>
-                <div id="array-sorted-value" class="lead"></div>
+                <div id="array-sorted-value" class="lead value"></div>
             </div>
-            <div class="row list inactive" id="array-shuffled">
+            <div class="row list" id="array-shuffled">
                 <div class="col-md-3 lead" type="text">Your shuffled list: </div>
-                <div id="array-shuffled-value" class="lead"></div>
+                <div id="array-shuffled-value" class="lead value"></div>
             </div>
         </div>
     </div>

@@ -50,13 +50,13 @@ function createRandomArray(amount) {
 }
 
 String.prototype.isLengthBeetwen = function(min, max) {
-    var warning = document.getElementById("warning");
+    var warning = $("#warning");
 
     if (this < min) {
-        warning.innerHTML = "Min length of the list is " + min;
+        warning.text(`Min length of the list is ${min}`);
 
     } else if (this > max) {
-        warning.innerHTML = "Max length of the list is " + max;
+        warning.text(`Max length of the list is ${max}`);
 
     } else {
         return true;
@@ -64,31 +64,22 @@ String.prototype.isLengthBeetwen = function(min, max) {
     return false;
 }
 
-function setAsActive(elementId) {
-    document.getElementById(elementId).setAttribute("class", "row active");
-    screenY
-}
-
-function setAsDisactive(elementId) {
-    document.getElementById(elementId).setAttribute("class", "row inactive");
-}
-
 function setValue(elementId, value) {
-    document.getElementById(elementId).innerHTML = value;
+    $(`#${elementId}`).text(value);
 }
 
 function setIfButtonDisabled(elementId, ifDisabled) {
-    document.getElementById(elementId).disabled = ifDisabled;
+    $(`#${elementId}`).prop('disabled', ifDisabled);
 }
 
 function createArray() {
     var userInput = document.getElementById("length").value;
 
-    if (userInput.isLengthBeetwen(1, 1000)) {
+    if (userInput.isLengthBeetwen(1, 25)) {
 
         array = createRandomArray(userInput);
 
-        setAsActive("array");
+        $("#array").addClass("active");
         setValue("array-value", array)
 
         setIfButtonDisabled("sort", false);
@@ -97,29 +88,28 @@ function createArray() {
 }
 
 function sortArray() {
-    setAsActive("array-sorted");
+    $("#array-sorted").addClass("active");
     setValue("array-sorted-value", sort(array));
 
     setIfButtonDisabled("sort", true);
 }
 
 function suffleArray() {
-
-    setAsActive("array-shuffled");
+    $("#array-shuffled").addClass("active");
     setValue("array-shuffled-value", shuffle(array));
 }
 
 function submit() {
     if (array.length > 0) {
         array = [];
-
-        setValue("array-sorted-value", "");
-        setAsDisactive("array-sorted");
-
-        setValue("array-shuffled-value", "");
-        setAsDisactive("array-shuffled");
+        $('.value').text("");
+        $("#array-sorted").removeClass("active");
+        $("#array-shuffled").removeClass("active");
     }
     createArray();
 }
 
 var array = [];
+$('#submit').on('click', submit);
+$('#sort').on('click', sortArray);
+$('#shuffle').on('click', suffleArray);
