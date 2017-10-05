@@ -1,0 +1,37 @@
+body {
+    background-color: #3B574E;
+}
+
+h2 {
+    margin-bottom: 20px;
+    margin-left: 25px;
+    color: #0C3A3A;
+}
+
+.main {
+    background-color: #C1EBD4;
+}
+
+.input-group {
+    margin-left: 25px;
+}
+
+#selectLength {
+    margin-bottom: 10px;
+}
+
+#warning {
+    height: 30px;
+    margin-left: 25px;
+    color: darkred;
+}
+
+.active {
+    margin-left: auto;
+    color: black;
+}
+
+.inactive {
+    margin-left: auto;
+    color: dimgrey;
+}
