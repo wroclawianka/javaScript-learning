@@ -4,16 +4,20 @@ body {
 
 h2 {
     margin-bottom: 20px;
-    margin-left: 25px;
     color: #0C3A3A;
+}
+
+.description>p {
+    margin-bottom: 0;
+}
+
+.description {
+    margin-bottom: 20px;
 }
 
 .main {
     background-color: #C1EBD4;
-}
-
-.input-group {
-    margin-left: 25px;
+    padding-left: 25px;
 }
 
 #selectLength {
@@ -26,12 +30,11 @@ h2 {
     color: darkred;
 }
 
-.active {
-    margin-left: auto;
-    color: black;
-}
-
-.inactive {
+.list {
     margin-left: auto;
     color: dimgrey;
+}
+
+.active {
+    color: black;
 }
