@@ -15,38 +15,38 @@ var colorKeys = [
     new Color(76, "blue")
 ];
 
-function showColor(e) {
-    const color = document.querySelector(`.color[data-key="${e.keyCode}"]`);
+function showColor(e) {;
+    const color = $(`.color[data-key='${e.keyCode}']`);
 
     var key = colorKeys.find(function(color) {
         if (color.key == e.keyCode) return this;
     }); //find if pressed key is on the list
 
     if (key) {
-        const page = document.querySelector('html')
-        page.style.background = key.color; //change background of page
+        const page = $('html')
+        page.css('background', key.color)
 
-        color.classList.add('selected');
+        color.addClass('selected');
 
         ajustFontColor(key);
     }
 }
 
 function ajustFontColor(key) {
-    const header = document.querySelector('.header');
+    const header = $('.header');
 
     if (key.color == "black")
-        header.classList.add("white");
+        header.addClass("white");
     else
-        header.classList.remove("white");
+        header.removeClass("white");
 
 }
 
-function removeTransition(e) {
-    if (e.propertyName != 'transform') return;
-    this.classList.remove('selected');
-}
+$('html').on('keydown', showColor);
 
-window.addEventListener('keydown', showColor);
-const keys = document.querySelectorAll('.color');
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+$('.color').each(function() {
+    $(this).on('transitionend', function(e) {
+        if (e.originalEvent.propertyName != 'transform') return;
+        $(this).removeClass('selected');
+    })
+});
