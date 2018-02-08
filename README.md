@@ -13,3 +13,4 @@ and more
 # See my Angular projects:
 - [Blog Template](https://github.com/unrealdst/BlogApi/tree/master/Blog2.0/blog2.0)
 - [Heroes](https://github.com/wroclawianka/angular2.0_heroes-tutorial)
+- Learning of Angular 5 with Maximilian Schwarzmüller, Udemy [Angular 5 (formerly Angular 2) - The Complete Guide](https://www.udemy.com/the-complete-guide-to-angular-2/)
