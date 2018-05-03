@@ -8,7 +8,7 @@ My repository to learn basics of Java Script
 - [JavaScript and JQuery](http://javascriptbook.com): Interactive Front-End Web Development 1st Edition, by Jon Duckett
 - [JavaScript. Ćwiczenia praktyczne](https://helion.pl/ksiazki/javascript-cwiczenia-praktyczne-wydanie-iii-marcin-lis,cwjas3.htm#format/e). Wydanie III (PL), by Marcin Lis,  
 and more
-- [Codeacademy](https://www.codecademy.com) - finished courses: HTML, CSS, JavaScript, Responsive Design, AngularJS 1.X, Java
+- [Codeacademy](https://www.codecademy.com) - finished courses: HTML, CSS, JavaScript, Responsive Design, AngularJS 1.X, Java, SASS
 
 # See my Angular projects:
 - [Blog Template](https://github.com/unrealdst/BlogApi/tree/master/Blog2.0/blog2.0)
