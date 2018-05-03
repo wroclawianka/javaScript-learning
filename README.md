@@ -12,5 +12,6 @@ and more
 
 # See my Angular projects:
 - [Blog Template](https://github.com/unrealdst/BlogApi/tree/master/Blog2.0/blog2.0)
+- [Cookbook](https://github.com/wroclawianka/cookbook)
+- [Angular 5 - The Complete Guide](https://www.udemy.com/the-complete-guide-to-angular-2/)
 - [Heroes](https://github.com/wroclawianka/angular2.0_heroes-tutorial)
-- [Angular 5 (formerly Angular 2) - The Complete Guide](https://www.udemy.com/the-complete-guide-to-angular-2/)
